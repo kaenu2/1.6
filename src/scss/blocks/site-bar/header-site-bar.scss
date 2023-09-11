@@ -1,0 +1,23 @@
+.header-site-bar {
+	&__left {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+	&__btn {
+	}
+	
+	&__logo {
+		& .logo__img {
+			max-width: 97px;
+		}
+	}
+}
+
+@media (min-width: 1440px) {
+	.header-site-bar {
+		&__btn .icon-burger-close {
+			display: none;
+		}
+	}
+}

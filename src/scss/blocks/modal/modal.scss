@@ -1,0 +1,114 @@
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.9605);
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease 0s;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	&__dialog {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		z-index: 1001;
+		background-color: var(--color-white);
+		padding: 24px 16px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease 0s;
+		@media (min-width: 500px){
+			width: 440px;
+			border-left: 1px solid var(--color-lite-green);
+			box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20),
+				-2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+		}
+		@media (min-width: 1440px){
+			padding: 40px 32px;
+		}
+	}
+
+	&__btn-close {
+	}
+	
+	&__form {
+		margin-top: 20px;
+		@media (min-width: 800px){
+			margin-top: 16px;
+		}
+	}
+
+	&__title {
+		font-size: $fz24;
+		font-weight: 700;
+		line-height: $lh133;
+		letter-spacing: $ls-06; 
+		margin-bottom: 24px;
+		position: relative;
+		&::before {
+			content: '';
+			height: 100%;
+			width: 3px;
+			top: 0;
+			left: -17px;
+			position: absolute;
+			background-color: var(--color-dark-green);
+			border-radius: 15px;
+			@media (min-width: 1440px){
+				left: -33px;
+			}
+		}
+	}
+
+	&__input {
+		display: block;
+		width: 100%;
+		margin-bottom: 16px;
+		border-radius: 8px;
+		border: 1px solid var(--color-light-gray);
+		background: var(--color-white);
+		padding: 12px 16px;
+		font-weight: 500;
+		line-height: $lh150;
+		letter-spacing: $ls-02;
+		&::placeholder {
+			color: var(--bulet-color);
+		}	
+	}
+
+	&__info {
+		color: var(--color-grey);
+		font-size: $fz14;
+		font-weight: 500;
+		line-height: $lh114;
+		margin-bottom: 20px;
+		& a {
+			color: var(--color-tomato);
+		}
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+
+.modal.active > .modal__dialog{
+	opacity: 1;
+	visibility: visible;
+	right: 0;
+}
+
+textarea.modal__input {
+	resize: none;
+	height: 118px;
+}

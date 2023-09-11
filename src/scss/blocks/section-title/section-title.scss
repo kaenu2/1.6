@@ -1,0 +1,22 @@
+.section-title {
+	position: relative;
+	background: linear-gradient(45deg, #f8f8f8 0%, #fff 78.61%, transparent);
+	padding: 16px 0;
+	&__text {
+		color: #7e7e82;
+		line-height: $lh150;
+		letter-spacing: $ls-02;
+		text-transform: uppercase;
+		color: var(--color-grey);
+	}
+	&::before{
+		content: '';
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		// background-color: red;
+		background-image: linear-gradient(to right, var(--color-green) 80%, transparent);
+	}
+}

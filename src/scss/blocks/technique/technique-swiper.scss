@@ -1,0 +1,29 @@
+.technique-swiper {
+	&__wrapper {
+		height: 190px;
+	}
+
+	&__slide {
+		height: 160px;
+		align-items: flex-start;
+		padding: 16px;
+		& {
+			// height: 100%;
+		}
+	}
+	&__btn {
+	}
+}
+
+@media (min-width: 768px) {
+	.technique-swiper {
+		&__wrapper {
+			overflow: hidden;
+		}
+	}
+	.technique-swiper {
+		&__wrapper {
+			height: 170px;
+		}
+	}
+}

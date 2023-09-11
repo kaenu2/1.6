@@ -1,0 +1,28 @@
+.btn-panel {
+	&__item {
+	}
+	&__btn {
+	}
+}
+
+.tel {
+	&__link {
+		color: inherit;
+		font-size: $fz24;
+		&:hover,
+		&:focus {
+			text-shadow: 1px 1px 2px var(--color-grey);
+		}
+	}
+}
+
+.email {
+	&__link {
+		color: inherit;
+		font-weight: 500;
+		&:hover,
+		&:focus {
+			text-shadow: 1px 1px 2px var(--color-grey);
+		}
+	}
+}

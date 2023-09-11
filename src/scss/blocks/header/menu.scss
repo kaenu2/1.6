@@ -1,0 +1,30 @@
+.menu {
+	display: flex;
+	align-items: center;
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+	&__list:first-child {
+		display: none;
+		padding-right: 20px;
+	}
+	&__list:last-child {
+		padding-left: 20px;
+	}
+	
+	&__item {
+	}
+	&__btn {
+	}
+}
+
+
+@media (min-width: 768px) {
+	.menu{
+		&__list:first-child {
+			display: flex;
+		}
+	}
+}

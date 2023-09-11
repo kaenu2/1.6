@@ -1,17 +1,111 @@
-$bgColor: #24292e;
-$text: #fff;
+@import 'base/fonts.css';
+@import 'base/nullstyle.css';
+@import 'base/vars';
+@import 'base/global';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
+@import 'blocks/title';
+@import 'blocks/logo';
+
+@import 'blocks/swiper/swiper';
+@import 'blocks/section-title/section-title';
+
+@import 'blocks/header/header';
+@import 'blocks/header/menu';
+
+@import 'blocks/service/service';
+@import 'blocks/service/tabs';
+@import 'blocks/service/info-content';
+
+@import 'blocks/site-bar/site-bar';
+@import 'blocks/site-bar/header-site-bar';
+@import 'blocks/site-bar/menu-site-bar';
+@import 'blocks/site-bar/lang-panel';
+@import 'blocks/site-bar/btn-panel';
+
+@import 'blocks/brands/brands';
+@import 'blocks/brands/brands-swiper';
+
+@import 'blocks/technique/technique';
+@import 'blocks/technique/technique-swiper';
+
+@import 'blocks/price/price';
+
+@import 'blocks/footer/footer';
+
+@import 'blocks/modal/modal';
+@import 'blocks/feedback/feedback';
 
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+  font-family: 'TTLakes', sans-serif;
+  font-size: $fz;
+  font-weight: normal;
+  color: var(--color-dark);
+  background-color: var(--bg-color);
+	&.lock{
+		overflow-y: hidden;
+	}
+}
+
+main {
+}
+
+.wrapper {
+}
+
+@media (min-width: 1440px){
+	.wrapper {
+		display: grid;
+		grid-template-columns: 320px auto;
+		max-width: 1426px;
+		margin: 0 auto;
+	}
+	main {
+		margin-left: -16px;
+	}
+}
+
+@keyframes btnIconAnim {
+	0% {
+		transform: translateY(-2px) scale(1);
+	}
+	50% {
+		transform: translateY(4px) scale(1.4);
+	}
+	100% {
+		transform: translateY(-2px) scale(1);
+	}
+}
+@keyframes btnIconAnimRotate {
+	0% {
+		transform: translateY(2px) scale(1) rotate(180deg);
+	}
+	50% {
+		transform: translateY(-4px) scale(1.2) rotate(180deg);
+	}
+	100% {
+		transform: translateY(2px) scale(1) rotate(180deg);
+	}
+}
+
+@keyframes animHeight {
+	0% {
+		height: 0;
+		background-color: transparent;
+	}
+	100% {
+		height: 32px;
+		background-color: var(--color-dark-green);
+	}
+}
+
+@keyframes btnIconAnim {
+	0% {
+		transform: translateY(-2px) scale(1);
+	}
+	50% {
+		transform: translateY(4px) scale(1.4);
+	}
+	100% {
+		transform: translateY(-2px) scale(1);
+	}
 }

@@ -1,0 +1,19 @@
+.brands-swiper {
+	&__wrapper {
+		height: 100px;
+	}
+	&__slide {
+		align-items: center;
+	}
+	&__btn {
+	}
+}
+
+@media (min-width: 768px) {
+	.brands-swiper {
+		&__wrapper {
+			height: 160px;
+			overflow: hidden;
+		}
+	}
+}

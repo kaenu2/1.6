@@ -19,6 +19,16 @@ module.exports = {
 
   module: {
     rules: [
+			{
+				test: /\.(html)$/,
+        include: path.join(__dirname, 'src/views'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          }
+        }
+			},
       // Транспилируем js с babel
       {
         test: /\.js$/,
