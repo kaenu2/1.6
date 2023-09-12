@@ -1,6 +1,9 @@
 .technique-swiper {
 	&__wrapper {
 		height: 190px;
+		&.active {
+			height: 190px;
+		}
 	}
 
 	&__slide {
@@ -8,7 +11,6 @@
 		align-items: flex-start;
 		padding: 16px;
 		& {
-			// height: 100%;
 		}
 	}
 	&__btn {
@@ -19,11 +21,10 @@
 	.technique-swiper {
 		&__wrapper {
 			overflow: hidden;
-		}
-	}
-	.technique-swiper {
-		&__wrapper {
 			height: 170px;
+			&.active{
+				height: 100%;
+			}
 		}
 	}
 }

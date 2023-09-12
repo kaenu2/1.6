@@ -17,6 +17,9 @@ const brandBtnSelector = document.querySelector('.brands-swiper__btn button');
 // Technique
 const techniqueContentSelector = document.querySelector('.technique-swiper__wrapper');
 const techniqueBtnSelector = document.querySelector('.technique-swiper__btn button');
+// Service
+const serviceContentSelector = document.querySelector('.info-content__text-body');
+const serviceBtnSelector = document.querySelector('.info-content__btn');
 
 const settingsSlader = {
 	direction: 'horizontal',
@@ -29,7 +32,8 @@ const settingsSlader = {
 		320: {
 			enabled: true,
 			spaceBetween: 16,
-			slidesPerView: 1.15
+			slidesPerView: 1.25
+			// slidesPerView: 1.18
 		},
 		375: {
 			enabled: true,
@@ -37,12 +41,8 @@ const settingsSlader = {
 			slidesPerView: 'auto'
 		},
 		768: {
-			spaceBetween: 24,
+			spaceBetween: 0,
 			enabled: false
-		},
-		1120: {
-			enabled: false,
-			spaceBetween: 30
 		}
 	}
 };
@@ -58,14 +58,14 @@ const closeModal = (event, selector, classNameBtn, classNameParent) => {
 	}
 }
 
-const showAllContent = (btnSelector, contentSelector) => {
+const showAllContent = (btnSelector, contentSelector, content) => {
 	btnSelector.classList.toggle('active');
 	contentSelector.classList.toggle('active');
 
 	if (!btnSelector.classList.contains('active')) {
-		btnSelector.textContent = 'Показать все';
+		btnSelector.textContent = content[0];
 	} else {
-		btnSelector.textContent = 'Скрыть';
+		btnSelector.textContent = content[1];
 	}
 }
 
@@ -97,22 +97,21 @@ siteBarModalSelector.addEventListener('click', e => {
 
 
 brandBtnSelector.addEventListener('click', e => {
-	showAllContent(brandBtnSelector, brandContentSelector);
+	showAllContent(brandBtnSelector, brandContentSelector, ['Показать все', 'Скрыть']);
 });
 
 techniqueBtnSelector.addEventListener('click', e => {
-	showAllContent(techniqueBtnSelector, techniqueContentSelector);
+	showAllContent(techniqueBtnSelector, techniqueContentSelector, ['Показать все', 'Скрыть']);
+});
+
+serviceBtnSelector.addEventListener('click', e => {
+	showAllContent(serviceBtnSelector, serviceContentSelector, ['Читать далее', 'Скрыть']);
 });
 
 
 const swiper = new Swiper('.brands-swiper', settingsSlader);
 const swiper2 = new Swiper('.technique-swiper', settingsSlader);
 
-const cloneObj = JSON.stringify(settingsSlader);
-const settingsSlader2 = JSON.parse(cloneObj)
+settingsSlader.breakpoints[320].slidesPerView = 1.15;
 
-settingsSlader2.breakpoints[320].slidesPerView = 1.05;
-settingsSlader2.breakpoints[768].spaceBetween = 0;
-settingsSlader2.breakpoints[1120].spaceBetween = 0;
-
-const swiper3 = new Swiper('.price-swiper', settingsSlader2);
+const swiper3 = new Swiper('.price-swiper', settingsSlader);

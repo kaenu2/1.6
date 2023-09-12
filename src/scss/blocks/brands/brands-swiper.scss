@@ -1,6 +1,9 @@
 .brands-swiper {
 	&__wrapper {
 		height: 100px;
+		&.active {
+			height: 100px;
+		}
 	}
 	&__slide {
 		align-items: center;
@@ -14,6 +17,9 @@
 		&__wrapper {
 			height: 160px;
 			overflow: hidden;
+			&.active {
+				height: 100%;
+			}
 		}
 	}
 }

@@ -1,16 +1,29 @@
 .info-content {
 	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 	}
 	&__text-body {
 		margin-bottom: 16px;
-	}
-	&__text-body p:last-of-type {
-		display: none;
+		overflow: hidden;
+		&.active .info-content__text_none {
+			height: auto;
+			padding-top: 30px;
+		}
 	}
 	&__text {
 		font-size: $fz14;
 		line-height: $lh128;
 		letter-spacing: $ls02;
+		&_none{
+			overflow: hidden;
+			height: 0px;
+			@media (min-width: 768px){
+				padding-top: 30px;
+				height: 67px;
+			}
+		}
 	}
 	&__btn {
 		margin-top: 16px;
@@ -44,16 +57,16 @@
 	}
 }
 
-
 @media (min-width: 550px) {
 	.info-content {
 		&__body {
-			display: flex;
+			flex-direction: row;
 			justify-content: space-between;
 			gap: 20px;
 		}
 		&__text-body {
-			max-width: 250px;
+			max-width: 312px;
+			min-width: 288px;
 		}
 		&__img {
 			margin: 0;
@@ -68,22 +81,8 @@
 			gap: 50px;
 		}
 		&__text-body {
-			max-width: 320px;
-		}
-		&__text-body p:first-of-type {
-			padding-bottom: 30px;
-		}
-		&__text-body p:last-of-type {
-			display: block;
-			height: 40px;
-			overflow: hidden;
-		}
-	}
-}
-@media (min-width: 950px) {
-	.info-content {
-		&__text-body {
-			max-width: 400px;
+			min-width: 312px;
+			max-width: 500px;
 		}
 	}
 }
@@ -94,11 +93,7 @@
 			gap: 37px;
 		}
 		&__text-body {
-			max-width: 500px;
-		}
-		&__text-body p:last-of-type {
-			display: inline;
-			height: 100%;
+			min-width: 500px;
 		}
 	}
 }
