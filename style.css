@@ -94,6 +94,7 @@ h6 {
 	font-weight: 400;
 }
 
+@charset "UTF-8";
 :root {
   --color-white: #ffffff;
   --color-lite-green: #d9fff5;
@@ -305,11 +306,26 @@ h6 {
 .logo__img {
   height: auto; }
 
+.swiper {
+  margin-right: -16px;
+  margin-left: 0; }
+  @media (max-width: 768px) {
+    .swiper {
+      margin-right: 0; } }
+
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: 0 !important; }
+
+.swiper-pagination-bullet {
+  background: #DDDDDD;
+  width: 12px;
+  height: 12px; }
+
+.swiper-pagination-bullet-active {
+  background: #B5B6BC; }
 
 .slide-item {
   display: flex;
@@ -327,7 +343,6 @@ h6 {
 
 .swiper-wrapper-items {
   display: flex;
-  row-gap: 16px;
   flex-wrap: nowrap; }
   .swiper-wrapper-items.active {
     height: 100%; }
@@ -335,11 +350,15 @@ h6 {
 @media (min-width: 768px) {
   .swiper-wrapper-items {
     flex-wrap: wrap;
-    margin-bottom: 24px; }
+    margin-bottom: 24px;
+    gap: 16px 24px; }
   .slide-item {
-    flex: 0 1 30%; } }
+    flex: 0 1 30%;
+    width: 100%; } }
 
 @media (min-width: 1120px) {
+  .swiper-wrapper-items {
+    gap: 16px 32px; }
   .slide-item {
     flex: 0 1 22%; } }
 
@@ -497,16 +516,29 @@ h6 {
   .tabs__list::after {
     display: none; } }
 
-.info-content__text-body {
-  margin-bottom: 16px; }
+.info-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; }
 
-.info-content__text-body p:last-of-type {
-  display: none; }
+.info-content__text-body {
+  margin-bottom: 16px;
+  overflow: hidden; }
+  .info-content__text-body.active .info-content__text_none {
+    height: auto;
+    padding-top: 30px; }
 
 .info-content__text {
   font-size: 14px;
   line-height: 128.571%;
   letter-spacing: 0.2px; }
+  .info-content__text_none {
+    overflow: hidden;
+    height: 0px; }
+    @media (min-width: 768px) {
+      .info-content__text_none {
+        padding-top: 30px;
+        height: 67px; } }
 
 .info-content__btn {
   margin-top: 16px;
@@ -540,11 +572,12 @@ h6 {
 
 @media (min-width: 550px) {
   .info-content__body {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 20px; }
   .info-content__text-body {
-    max-width: 250px; }
+    max-width: 312px;
+    min-width: 288px; }
   .info-content__img {
     margin: 0; } }
 
@@ -554,26 +587,14 @@ h6 {
     justify-content: space-between;
     gap: 50px; }
   .info-content__text-body {
-    max-width: 320px; }
-  .info-content__text-body p:first-of-type {
-    padding-bottom: 30px; }
-  .info-content__text-body p:last-of-type {
-    display: block;
-    height: 40px;
-    overflow: hidden; } }
-
-@media (min-width: 950px) {
-  .info-content__text-body {
-    max-width: 400px; } }
+    min-width: 312px;
+    max-width: 500px; } }
 
 @media (min-width: 1120px) {
   .info-content__body {
     gap: 37px; }
   .info-content__text-body {
-    max-width: 500px; }
-  .info-content__text-body p:last-of-type {
-    display: inline;
-    height: 100%; } }
+    min-width: 500px; } }
 
 .site-bar {
   position: fixed;
@@ -740,6 +761,8 @@ h6 {
 
 .brands-swiper__wrapper {
   height: 100px; }
+  .brands-swiper__wrapper.active {
+    height: 100px; }
 
 .brands-swiper__slide {
   align-items: center; }
@@ -747,7 +770,9 @@ h6 {
 @media (min-width: 768px) {
   .brands-swiper__wrapper {
     height: 160px;
-    overflow: hidden; } }
+    overflow: hidden; }
+    .brands-swiper__wrapper.active {
+      height: 100%; } }
 
 .technique {
   margin-bottom: 25px; }
@@ -764,6 +789,8 @@ h6 {
 
 .technique-swiper__wrapper {
   height: 190px; }
+  .technique-swiper__wrapper.active {
+    height: 190px; }
 
 .technique-swiper__slide {
   height: 160px;
@@ -772,9 +799,10 @@ h6 {
 
 @media (min-width: 768px) {
   .technique-swiper__wrapper {
-    overflow: hidden; }
-  .technique-swiper__wrapper {
-    height: 170px; } }
+    overflow: hidden;
+    height: 170px; }
+    .technique-swiper__wrapper.active {
+      height: 100%; } }
 
 .price {
   margin-bottom: 40px; }
@@ -818,19 +846,24 @@ h6 {
         height: auto;
         background: var(--color-white);
         border-radius: 6px; } }
-  @media (min-width: 768px) {
-    .price-swiper__slide {
-      padding: 0 16px; } }
-  @media (min-width: 1440px) {
-    .price-swiper__slide {
-      padding: 0 24px; } }
+  .price-swiper__slide {
+    width: 240px; }
+    @media (min-width: 768px) {
+      .price-swiper__slide {
+        padding: 0 16px;
+        width: 100%; } }
+    @media (min-width: 1440px) {
+      .price-swiper__slide {
+        padding: 0 24px; } }
 
 .price-slide:last-child .price-slide__body {
   border-bottom: 1px solid transparent; }
 
 .price-slide__body {
   display: grid;
-  grid-template-areas: 'services services' 'price price' 'term btn';
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
   gap: 16px;
   height: 200px;
   background: var(--color-white);
@@ -838,41 +871,50 @@ h6 {
   border-radius: 6px; }
   @media (min-width: 768px) {
     .price-slide__body {
-      grid-template-areas: 'services price term btn';
       grid-template-columns: 3fr 1fr 1fr 1fr;
-      align-items: center;
+      grid-template-rows: 1fr;
       border-radius: 0px;
       gap: 0;
       height: auto;
+      width: 100%;
       padding: 16px 0;
       background-color: transparent;
       border-bottom: 1px solid var(--color-light-gray); } }
 
-.price-slide__info:nth-child(1) {
-  grid-area: services; }
-
-.price-slide__info:nth-child(2) {
-  grid-area: price; }
-
-.price-slide__info:nth-child(3) {
-  grid-area: term; }
-
-.price-slide__info:nth-child(4) {
-  grid-area: btn;
-  justify-self: flex-end; }
-
-.price-slide__title {
+.price-slide__info::before {
+  display: block;
   color: var(--color-grey);
   font-size: 14px;
   font-weight: 500;
   line-height: 114.286%;
   padding-bottom: 5px; }
   @media (min-width: 768px) {
-    .price-slide__title {
+    .price-slide__info::before {
       display: none; } }
 
+.price-slide__info:nth-child(1) {
+  grid-column: 1 / span 2; }
+  @media (min-width: 768px) {
+    .price-slide__info:nth-child(1) {
+      grid-column: auto; } }
+  .price-slide__info:nth-child(1)::before {
+    content: 'Ремонтные услуги'; }
+
+.price-slide__info:nth-child(2) {
+  grid-column: 1 / span 2; }
+  @media (min-width: 768px) {
+    .price-slide__info:nth-child(2) {
+      grid-column: auto; } }
+  .price-slide__info:nth-child(2)::before {
+    content: 'Цена'; }
+
+.price-slide__info:nth-child(3)::before {
+  content: 'Срок'; }
+
+.price-slide__info:nth-child(4) {
+  justify-self: flex-end; }
+
 .price-slide__value {
-  color: #1B1C21;
   font-size: 14px;
   font-weight: 400;
   line-height: 128.571%;
