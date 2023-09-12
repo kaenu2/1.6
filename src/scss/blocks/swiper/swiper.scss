@@ -5,6 +5,9 @@
 		margin-right: 0;
 	}
 	&-wrapper {
+		@media (min-width: 768px){
+			transform: translate3d(0px) !important;
+		}
 	}
 	&-slide {
 	}
@@ -16,6 +19,12 @@
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
 	bottom: 0 !important;
+}
+
+.swiper-wrapper {
+	@media (min-width: 768px){
+		transform: none !important;
+	}
 }
 
 .swiper-pagination-bullet {
