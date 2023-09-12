@@ -312,12 +312,19 @@ h6 {
   @media (max-width: 768px) {
     .swiper {
       margin-right: 0; } }
+  @media (min-width: 768px) {
+    .swiper-wrapper {
+      transform: translate3d(0px) !important; } }
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: 0 !important; }
+
+@media (min-width: 768px) {
+  .swiper-wrapper {
+    transform: none !important; } }
 
 .swiper-pagination-bullet {
   background: #DDDDDD;
